@@ -15,3 +15,56 @@ int main()
   const helpHeader constObj;
   constObj.printStuff2();
 }
+
+---------------------------------------------------------------------------------------------------------
+//Constructor
+#ifndef HELPHEADER_H
+#define HELPHEADER_H
+
+
+class helpHeader
+{
+    public:
+        helpHeader();
+        ~helpHeader();
+
+        void printStuff();
+void printStuff2() const;
+
+    protected:
+
+    private:
+};
+
+#endif // HELPHEADER_H
+
+-----------------------------------------------------------------------------------------------------------
+// Implementation File
+
+#include "helpHeader.h"
+#include <iostream>
+
+using namespace std;
+
+helpHeader::helpHeader()
+{
+
+}
+void helpHeader::printStuff() {
+cout << "I am a regular function" << endl;
+}
+//when making constant function make sure to right it right after the function defination
+
+void helpHeader::printStuff2() const {
+cout << "This is the constant function" << endl;
+}
+
+helpHeader::~helpHeader()
+{
+    cout << "this is the destructor" << endl;
+
+}
+
+
+
+
