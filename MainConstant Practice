@@ -1,0 +1,17 @@
+#include "helpHeader.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{   //class    //create a helpHeader object
+//created the class helpHeader from header and in main created the helpHeaderObj;
+
+  helpHeader helpHeaderObj;
+  helpHeaderObj.printStuff();
+
+  //use const before creating const object
+
+  const helpHeader constObj;
+  constObj.printStuff2();
+}
