@@ -1,0 +1,83 @@
+#include "Frank.h"
+#include <iostream>
+//Member initializer review
+//Set up implementation file and header file
+//create an object in the main driver
+
+using namespace std;
+
+int main()
+{
+    //Create a frank object
+    // Use two random integers
+    //Program will take 3 and assign it to regular variable
+    //Program should take 87 and assign it to constant variable
+    Frank fo(13, 187, 15, 200);
+    //frank object from class frank calls print member function
+    fo.print();
+
+    return 0;
+}
+
+
+___________________________________________________________________________________________
+
+//Header File
+
+#ifndef FRANK_H
+#define FRANK_H
+
+
+class Frank
+{  //constructor that takes two values
+    public:    //int a is value one,   //int b is value two
+
+        Frank( int a, int b, int c, int d);
+        void print();
+        ~Frank();
+
+    protected:
+
+    private:
+        int regVar;
+        int const constVar;
+        int regVar1;
+        int const constVar1;
+};
+
+#endif // FRANK_H
+
+
+_______________________________________________________________________________________________________
+
+
+#include "Frank.h"
+#include <iostream>
+using namespace std;
+// Put in the two constructor values
+//You need to put member initializers before the { and after the parameter
+Frank::Frank( int a, int b, int c, int d)
+// write a colon : to tell C++ member initializer syntax
+: regVar(a),
+constVar(b),
+regVar1(c),
+constVar1(d)
+
+{
+}
+void Frank::print()
+{
+    cout << "The first regular variable is: " << regVar << " The constant variable is: " << constVar << endl;
+    cout << "The second regular variable is: " << regVar1 << "The second constant variable is: " <<constVar1 <<endl;
+
+}
+
+Frank::~Frank()
+{ cout <<"I hope the program worked right" << endl;
+
+
+}
+
+
+
+
