@@ -1,7 +1,7 @@
 #include "Birthday.h"
 #include "People.h"
 #include <iostream>
-
+//help me please
 using namespace std;
 
 int main()
