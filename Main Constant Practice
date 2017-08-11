@@ -1,0 +1,130 @@
+#include "Birthday.h"
+#include "People.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{  //Month, Day, Year
+
+    cout << " Please insert the birthday of Jinhua Freeman" <<endl;
+
+
+    Birthday birthObj (07, 05, 1986);
+    //use string as name and birthday object
+    People francisFreeman( "Jinhua Freeman the Lovely", birthObj);
+
+    francisFreeman.printInfo();
+
+
+
+
+    return 0;
+}
+______________________________________________________________________________________________________________
+
+#ifndef BIRTHDAY_H
+#define BIRTHDAY_H
+#include <iostream>
+
+using namespace std;
+
+
+class Birthday
+{
+    public:
+       //List m for month, d for day, y for year
+
+        Birthday(int m, int d, int y);
+       //create void printDate(); Member Function
+       void printDate();
+
+        ~Birthday();
+
+    private:
+        int month;
+        int day;
+        int year;
+
+};
+
+#endif // BIRTHDAY_H
+______________________________________________________________________________________________________________
+
+#include "Birthday.h"
+#include "People.h"
+#include <iostream>
+
+using namespace std;
+
+
+Birthday::Birthday(int m, int d, int y)
+{
+    month = m;
+    day= d;
+    year= y;
+
+}
+void Birthday::printDate(){
+cout << month << " / " << day << " / " << year << " / " << endl;
+
+}
+
+Birthday::~Birthday()
+{
+
+}
+
+______________________________________________________________________________________________________________________
+
+#ifndef PEOPLE_H
+#define PEOPLE_H
+#include <string>
+#include "Birthday.h"
+// Use Birthday user created info from the birthday header here
+
+ using namespace std;
+
+class People
+{
+    public:
+        People(string x, Birthday bo);  //creates object
+        void printInfo();   //prints information
+
+        ~People();
+
+    private:
+        string name;
+        Birthday dateOfBirth;
+};
+
+#endif // PEOPLE_H
+
+__________________________________________________________________________________________________________
+
+#include "People.h"
+#include "Birthday.h"
+#include <iostream>
+
+using namespace std;
+
+//copy the parameters from people.h and paste below
+
+People::People(string x, Birthday bo)  //Assign the name and the birthday
+:  name(x), dateOfBirth(bo)
+    //put member intializer list before body of function
+
+{  //Need to use a member initializer list
+
+}
+void    People::printInfo() {
+    cout << name << " was born on ";
+    dateOfBirth.printDate();
+}
+
+People::~People()
+{
+
+}
+__________________________________________________________________________________________________________________
+
